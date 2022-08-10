@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url("../image/wallhaven-l3jg9l_1920x1080.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .div_big {
+            /*指定大小*/
+            width: 400px;
+            height: 500px;
+            background: rgba(0,0,0,.6);
+            margin: 100px auto;
+            text-align: center;
+            /*因为会发生塌陷，所以这边需要一条透明的边框*/
+            border-top: 1px solid transparent;
+        }
+        .form1 h1 {
+            margin-top: 85px;
+            color: white;
+
+        }
+        .form1 .input1 {
+            display: block;
+            width: 230px;
+            height: 40px;
+            margin: 25px auto 40px;
+            font-size: 20px;
+            text-indent: 1em;
+            border: none;
+            border-bottom: 2px solid #4da7e3;
+            /*background: rgba(0,0,0,.6);*/
+
+        }
+        .form1 .input2 {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            margin: 20px ;
+            border-radius: 25px;
+            font-weight: bold;
+            color: white;
+            background-image: linear-gradient(to right,
+            #a9bef4,#fb918e);
+            border: none;
+
+        }
+
+    </style>
+</head>
+<body>
+<!--快速写一个登录界面吧-->
+<div class="div_big">
+    <form action="http://localhost:8080/login/login1" method="post" class="form1">
+        <h1>登录</h1>
+        <input type="text"  class="input1" name="userAccount">
+        <input type="password" class="input1" name="userPassword">
+        <input type="reset" value="清空" class="input2">
+        <input type="submit" value="提交" class="input2">
+    </form>
+</div>
+
+
+</body>
+</html>
