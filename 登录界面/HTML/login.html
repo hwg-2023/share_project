@@ -15,8 +15,8 @@
         }
         .div_big {
             /*指定大小*/
+            overflow: hidden;
             width: 400px;
-            height: 500px;
             background: rgba(0,0,0,.6);
             margin: 100px auto;
             text-align: center;
@@ -35,7 +35,9 @@
             margin: 25px auto 40px;
             font-size: 20px;
             text-indent: 1em;
-            border: none;
+            border: 0;
+            outline: 0;
+            background-color: rgba(0,0,0,.1);
             border-bottom: 2px solid #4da7e3;
             /*background: rgba(0,0,0,.6);*/
 
@@ -53,6 +55,26 @@
             border: none;
 
         }
+        .div_big .image_22 {
+            float: left;
+            width: 116px;
+            height: 105px;
+            background-image: url("../image/22_open.72c00877改.png");
+        }
+        .div_big .image_33 {
+            float: right;
+            width: 116px;
+            height: 105px;
+            background-image: url("../image/33_open.43a09438改.png");
+
+        }
+        /*.image_22 image {*/
+        /*    width: auto;*/
+        /*    height: auto;*/
+        /*    max-width: 100%;*/
+        /*    max-height: 100%;*/
+        /*}*/
+
 
     </style>
 </head>
@@ -61,12 +83,32 @@
 <div class="div_big">
     <form action="http://localhost:8080/login/login1" method="post" class="form1">
         <h1>登录</h1>
-        <input type="text"  class="input1" name="userAccount">
-        <input type="password" class="input1" name="userPassword">
+        <input type="text"  class="input1" name="userAccount" placeholder="Account">
+        <input type="password" class="input1" id="ps" name="userPassword" placeholder="Password">
         <input type="reset" value="清空" class="input2">
-        <input type="submit" value="提交" class="input2">
+        <input type="submit" value="登录" class="input2">
     </form>
+    <div class="image_22" id="i22"></div>
+    <div class="image_33" id="i33"></div>
 </div>
+<script>
+    var ps = document.getElementById('ps');
+    var i22 = document.getElementById('i22');
+    var i33 = document.getElementById('i33');
+    var change = 0;
+    ps.onfocus = function (){
+        i22.style.backgroundImage = 'url("../image/22_close.0efad8c4改.png")';
+        i33.style.backgroundImage = 'url("../image/33_close.eea03c39改.png")';
+        change = 1;
+    }
+    ps.onblur = function (){
+        i22.style.backgroundImage = 'url("../image/22_open.72c00877改.png")';
+        i33.style.backgroundImage = 'url("../image/33_open.43a09438改.png")';
+        change = 0;
+    }
+
+
+</script>
 
 
 </body>
