@@ -15,9 +15,12 @@
         }
         .div_top {
             /*指定大小*/
+            display: none;
             width: 800px;
             height: 100px;
-            margin: 20px auto;
+            margin: 0 auto 50px;
+            /*设置背景框*/
+            background: rgba(0,0,0,.6);
         }
         .div_top ul li {
             float: left;
@@ -37,7 +40,7 @@
             overflow: hidden;
             width: 400px;
             background: rgba(0,0,0,.6);
-            margin: 20px auto;
+            margin: 50px auto;
             text-align: center;
             /*因为会发生塌陷，所以这边需要一条透明的边框*/
             border-top: 1px solid transparent;
@@ -133,7 +136,16 @@
             //console.log(this.src)
             document.body.style.backgroundImage = 'url("'+this.src+'")';
         }
-    }A
+    }
+    var move = document.querySelector('.div_top');
+    document.addEventListener('keydown',function (e){
+        if (e.keyCode === 32){
+            move.style.display = 'block';
+        }
+        if (e.keyCode === 27){
+            move.style.display = 'none';
+        }
+    })
 </script>
 </body>
 </html>
